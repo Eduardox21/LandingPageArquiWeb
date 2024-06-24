@@ -1,0 +1,122 @@
+<mat-toolbar color="primary" *ngIf="verificar()">
+  <button mat-button [routerLink]="['/homes']">
+    <mat-icon>home</mat-icon>Home
+  </button>
+  
+  
+  <button mat-button [matMenuTriggerFor]="menuCard" *ngIf="isAdmin()||isMod()||isClient()"><mat-icon> payment</mat-icon>Card</button>  
+  <button mat-button [matMenuTriggerFor]="menuRole" *ngIf="isAdmin()||isMod()" ><mat-icon> moderator</mat-icon>Roles</button>
+  <button mat-button [matMenuTriggerFor]="menuService" *ngIf="isAdmin()||isMod()"><mat-icon> settings</mat-icon>Service</button>
+  <button mat-button [matMenuTriggerFor]="menuForum" *ngIf="isAdmin()"><mat-icon> forum</mat-icon>Forum</button>
+  <button mat-button [matMenuTriggerFor]="menuNotificacion" *ngIf="isAdmin()"><mat-icon> notifications</mat-icon>Notificaciones</button>
+  <button mat-button [matMenuTriggerFor]="menuSuscription" *ngIf="isAdmin()||isMod()||isClient()"><mat-icon> money</mat-icon>Suscripcion</button>
+  <button mat-button [matMenuTriggerFor]="menuType_Service" *ngIf="isAdmin()||isMod()"><mat-icon>list_alt</mat-icon>Type Services</button>
+  <button mat-button [matMenuTriggerFor]="menuInvoice" *ngIf="isAdmin()||isMod()"><mat-icon>description</mat-icon>Invoices</button>
+  <button mat-button [matMenuTriggerFor]="menuDetail" *ngIf="isAdmin()||isMod()||isClient()"><mat-icon>details</mat-icon>Details</button>
+  <button mat-button [matMenuTriggerFor]="menuPost" *ngIf="isAdmin()||isMod()||isClient()"><mat-icon>announcement</mat-icon>Posts</button>
+  <button mat-button [matMenuTriggerFor]="menuCouseling" *ngIf="isAdmin()||isMod()"><mat-icon>camera</mat-icon>Couseling</button>
+  <button mat-button [matMenuTriggerFor]="menuComment" *ngIf="isAdmin()||isMod()||isClient()"><mat-icon> comment</mat-icon>Comentarios</button>
+  <button mat-button [matMenuTriggerFor]="menuReport" *ngIf="isAdmin()"><mat-icon> assessment</mat-icon>Reportes</button>
+  <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>people</mat-icon>Usuario</button>
+
+
+</mat-toolbar>
+
+<mat-menu #menuCard="matMenu">
+  <button mat-menu-item routerLink="/cards">Listar</button>
+  <button mat-menu-item routerLink="/cards/registerCard">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuRole="matMenu">
+  <button mat-menu-item routerLink="/roles">Listar</button>
+  <button mat-menu-item routerLink="/roles/registerRole">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuService="matMenu">
+  <button mat-menu-item routerLink="/services">Listar</button>
+  <button mat-menu-item routerLink="/services/registerService">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuForum="matMenu">
+  <button mat-menu-item routerLink="/forum">Listar</button>
+  <button mat-menu-item routerLink="/forum/registerForum">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuNotificacion="matMenu">
+  <button mat-menu-item routerLink="/Notification">Listar</button>
+  <button mat-menu-item routerLink="/Notification/registerNotification">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuSuscription="matMenu">
+  <button mat-menu-item routerLink="/suscriptions">Listar</button>
+  <button mat-menu-item routerLink="/suscriptions/registersuscriptions">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuType_Service="matMenu">
+  <button mat-menu-item routerLink="/typeServices">Listar</button>
+  <button mat-menu-item routerLink="/typeServices/registerTypeService">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuInvoice="matMenu">
+  <button mat-menu-item routerLink="/invoices">Listar</button>
+  <button mat-menu-item routerLink="/invoices/registerInvoice">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuDetail="matMenu">
+  <button mat-menu-item routerLink="/details">Listar</button>
+  <button mat-menu-item routerLink="/details/registerDetail">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuPost="matMenu">
+  <button mat-menu-item routerLink="/posts">Listar</button>
+  <button mat-menu-item routerLink="/posts/registerPost">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuCouseling="matMenu">
+  <button mat-menu-item routerLink="/counselings">Listar</button>
+  <button mat-menu-item routerLink="/counselings/registerCounseling">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuComment="matMenu">
+  <button mat-menu-item routerLink="/comments">Listar</button>
+  <button mat-menu-item routerLink="/comments/registerComment">Registrar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuReport="matMenu">
+  <button mat-menu-item routerLink="/repo">Reporte01-Naomi</button>
+  <button mat-menu-item routerLink="/repo/registerReport02">Reporte02-Naomi</button>
+  <button mat-menu-item routerLink="/repo/registerReport03">Reporte03-Eduardo</button>
+  <button mat-menu-item routerLink="/repo/registerReport04">Reporte04-Eduardo</button>
+  <button mat-menu-item routerLink="/repo/registerReport05">Reporte05-Ricardo</button>
+  <button mat-menu-item routerLink="/repo/registerReport06">Reporte06-Kimberly</button>
+  <button mat-menu-item routerLink="/repo/registerReport07">Reporte07-Kimberly</button>
+  <button mat-menu-item routerLink="/repo/registerReport08">Reporte08-Daysy</button>
+  
+</mat-menu>
+
+<mat-menu  #menuSalir="matMenu" >
+  
+  
+  <button mat-menu-item>
+    <mat-icon>assignment_ind</mat-icon>
+    
+    <span>{{role}}</span>
+  </button>
+  <button mat-menu-item routerLink="/login" (click)="eliminar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>
